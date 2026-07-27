@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<meta name="theme-color" content="#1a0533">
+<meta name="description" content="CV बनाओ, Career Roadmap पाओ, Skill Gap जानो — Free!">
+<title>युवा रोज़गार सेतु 🚀</title>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--or:#FF6B35;--pk:#FF3CAC;--dp:#1a0533;--vt:#7B2FBE;--gn:#6BCB77;--bl:#2196F3;--yw:#FFD93D;}
+body{font-family:"Baloo 2",sans-serif;background:#FFF9F0;color:#1a1a1a;min-height:100vh;}
+.hi{font-family:"Noto Sans Devanagari",sans-serif;}
+button{touch-action:manipulation;}
+
+/* SCREENS */
+#screen-login{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#1a0533,#7B2FBE,#FF3CAC);padding:20px;}
+#screen-app{display:none;}
+
+/* LOGIN */
+.lbox{background:#fff;border-radius:24px;padding:32px 24px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.llogo{font-size:48px;margin-bottom:6px;}
+.ltitle{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--or),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
+.lsub{font-size:12px;color:#888;margin-bottom:22px;line-height:1.6;}
+.lbtn{width:100%;padding:13px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;border:none;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .15s;min-height:48px;}
+.lbtn-g{background:#fff;border:2px solid #e0e0e0;color:#333;}
+.lbtn-g:hover{border-color:var(--or);background:#FFF0E8;}
+.lbtn-p{background:linear-gradient(135deg,var(--gn),var(--bl));color:#fff;}
+.ldiv{display:flex;align-items:center;gap:10px;margin:12px 0;color:#ccc;font-size:12px;}
+.ldiv::before,.ldiv::after{content:"";flex:1;height:1px;background:#eee;}
+.otp-sec{display:none;margin-top:6px;}
+.ph-wrap{display:flex;gap:8px;margin-bottom:10px;}
+.ph-pre{background:#f5f5f5;padding:11px 10px;border-radius:10px;font-size:13px;font-weight:700;white-space:nowrap;border:2px solid #f0f0f0;}
+.linput{flex:1;padding:11px 12px;border:2px solid #f0f0f0;border-radius:10px;font-size:16px;font-family:inherit;outline:none;transition:border .15s;width:100%;}
+.linput:focus{border-color:var(--or);}
+.lotp-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;min-height:48px;}
+.lnote{font-size:11px;color:#aaa;margin-top:12px;line-height:1.6;}
+
+/* TOPBAR */
+.topbar{background:var(--dp);padding:9px 14px;display:flex;align-items:center;justify-content:space-between;}
+.tlogo{font-size:14px;font-weight:800;color:var(--yw);}
+.tright{display:flex;align-items:center;gap:7px;}
+.upic{width:26px;height:26px;border-radius:50%;border:2px solid var(--or);}
+.unm{font-size:11px;color:#fff;font-weight:600;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lout{background:rgba(255,255,255,.15);border:none;color:#fff;padding:4px 10px;border-radius:100px;font-size:10px;cursor:pointer;font-family:inherit;}
+
+/* NAV */
+nav{background:#fff;border-bottom:2px solid #ffe0cc;padding:9px 13px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.logo{font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--or),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nright{display:flex;align-items:center;gap:7px;}
+.cpill{background:linear-gradient(135deg,var(--gn),var(--bl));color:#fff;padding:5px 11px;border-radius:100px;font-size:11px;font-weight:700;white-space:nowrap;}
+.buybtn{background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;padding:6px 12px;border-radius:100px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;}
+.langbtn{background:#f0f0f0;border:none;padding:6px 11px;border-radius:100px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;color:#333;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--dp),var(--vt),var(--pk));padding:30px 16px 38px;text-align:center;}
+.htag{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:4px 14px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.hero h1{font-size:24px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px;}
+.hero h1 span{color:var(--yw);}
+.hero p{font-size:12px;color:rgba(255,255,255,.85);}
+
+/* WRAP */
+.wrap{max-width:680px;margin:0 auto;padding:13px 13px 60px;}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:-26px;margin-bottom:13px;}
+.stat{background:#fff;border-radius:13px;padding:11px 6px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.sn{font-size:16px;font-weight:800;color:var(--or);}
+.se{font-size:10px;color:#888;}
+
+/* MOTIVATE */
+.mot{background:linear-gradient(135deg,var(--dp),var(--vt));border-radius:13px;padding:12px 15px;text-align:center;color:#fff;margin-bottom:12px;}
+.mot-t{font-size:14px;font-weight:700;}
+.mot-s{font-size:11px;opacity:.85;margin-top:2px;}
+
+/* TABS */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:11px;}
+.tab{background:#fff;border:2.5px solid #f0f0f0;border-radius:13px;padding:11px 4px;text-align:center;cursor:pointer;transition:all .15s;}
+.tab:hover,.tab.on{border-color:var(--or);background:#FFF0E8;}
+.tab.on{box-shadow:0 4px 12px rgba(255,107,53,.2);}
+.ti{font-size:18px;display:block;margin-bottom:3px;}
+.tn{font-size:10px;font-weight:700;color:#1a1a1a;line-height:1.3;}
+.th{font-size:9px;color:var(--or);margin-top:1px;}
+
+/* PANEL */
+.panel{background:#fff;border-radius:18px;padding:17px;display:none;box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.panel.on{display:block;}
+.ptag{display:inline-block;background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;padding:3px 11px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:5px;}
+.ptitle{font-size:16px;font-weight:800;margin-bottom:3px;}
+.psub{font-size:12px;color:#888;margin-bottom:12px;padding-bottom:10px;border-bottom:2px dashed #f5f5f5;}
+
+/* SUBTABS */
+.stabs{display:flex;gap:7px;margin-bottom:13px;flex-wrap:wrap;}
+.stab{flex:1;min-width:100px;padding:9px 6px;border:2px solid #f0f0f0;border-radius:10px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;transition:all .15s;background:#fff;white-space:nowrap;}
+.stab.on{border-color:var(--vt);background:#f5f0ff;color:var(--vt);}
+
+/* FORM */
+.field{margin-bottom:11px;}
+.field label{display:block;font-size:11px;font-weight:700;color:#333;margin-bottom:3px;}
+.hint{font-size:10px;color:#aaa;display:block;margin-bottom:3px;}
+input[type=text],input[type=tel],select,textarea{width:100%;padding:10px 12px;border:2px solid #f0f0f0;border-radius:10px;font-size:16px;font-family:"Baloo 2","Noto Sans Devanagari",sans-serif;color:#1a1a1a;background:#fafafa;outline:none;transition:border .15s;-webkit-appearance:none;}
+input[type=text]:focus,select:focus,textarea:focus{border-color:var(--or);background:#fff;}
+textarea{min-height:80px;resize:vertical;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* VOICE INPUT WRAP */
+.voice-wrap{position:relative;}
+.voice-wrap textarea,.voice-wrap input{padding-right:42px;}
+.mic-btn{position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--vt),var(--bl));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .2s;box-shadow:0 2px 8px rgba(123,47,190,.3);}
+.mic-btn.listening{background:linear-gradient(135deg,#FF3CAC,var(--or));animation:pulse-mic .8s ease infinite;}
+.mic-btn-top{position:absolute;right:8px;top:8px;}
+@keyframes pulse-mic{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+
+/* BUTTON */
+.gbtn{width:100%;padding:13px;background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:6px;box-shadow:0 5px 16px rgba(255,107,53,.3);min-height:48px;}
+.gbtn:disabled{background:#ddd;box-shadow:none;cursor:not-allowed;}
+.gbtn2{background:linear-gradient(135deg,var(--vt),var(--bl));}
+
+/* CREDITS WARN */
+.ncred{background:#FFF0E8;border:2px dashed var(--or);border-radius:13px;padding:15px;text-align:center;margin-top:11px;display:none;}
+.ncred h3{font-size:14px;font-weight:700;color:var(--dp);margin-bottom:5px;}
+.ncred p{font-size:11px;color:#666;margin-bottom:11px;line-height:1.6;}
+.ncbtn{background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;min-height:44px;}
+
+/* LOADING */
+.ld{display:none;text-align:center;padding:14px;font-size:13px;color:#888;}
+.dots span{display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 2px;animation:bop .8s ease infinite;}
+.dots span:nth-child(1){background:var(--or);}
+.dots span:nth-child(2){background:var(--pk);animation-delay:.15s;}
+.dots span:nth-child(3){background:var(--vt);animation-delay:.3s;}
+@keyframes bop{0%,100%{transform:scale(.5);}50%{transform:scale(1.2);}}
+
+/* RESULT */
+.res{display:none;margin-top:12px;}
+.rbadges{margin-bottom:8px;}
+.rb{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-right:4px;}
+.rb1{background:linear-gradient(135deg,var(--or),var(--yw));color:#fff;}
+.rb2{background:linear-gradient(135deg,var(--gn),var(--bl));color:#fff;}
+.rbox{background:#f8f5ff;border:2px solid #ede5ff;border-radius:12px;padding:14px;font-size:13px;line-height:1.85;white-space:pre-wrap;font-family:"Baloo 2","Noto Sans Devanagari",sans-serif;max-height:450px;overflow-y:auto;}
+.abtns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;}
+.abtn{padding:8px 14px;border:none;border-radius:9px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;min-height:36px;}
+.abtn-dl{background:var(--vt);color:#fff;}
+.abtn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;}
+.abtn-re{background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;}
+
+/* SKILL GAP SCORE */
+.score-box{background:linear-gradient(135deg,var(--dp),var(--vt));border-radius:16px;padding:20px;text-align:center;color:#fff;margin-bottom:14px;}
+.score-num{font-size:48px;font-weight:800;line-height:1;}
+.score-label{font-size:13px;opacity:.85;margin-top:4px;}
+.score-bar-bg{background:rgba(255,255,255,.2);border-radius:100px;height:10px;margin:12px 0;}
+.score-bar{height:10px;border-radius:100px;background:linear-gradient(90deg,var(--gn),var(--yw));transition:width 1s ease;}
+.skill-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.skill-card{border-radius:12px;padding:12px;font-size:12px;line-height:1.7;}
+.sk-have{background:#f0fff4;border:2px solid var(--gn);}
+.sk-miss{background:#fff0f0;border:2px solid #FF6B6B;}
+.sk-upg{background:#fffbf0;border:2px solid var(--yw);}
+.sk-plan{background:#f0f4ff;border:2px solid var(--bl);}
+.sk-title{font-size:12px;font-weight:700;margin-bottom:6px;}
+
+/* FREE FEATURES */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+.fcrd{background:#fff;border:2px solid #f0f0f0;border-radius:13px;padding:12px;cursor:pointer;text-align:center;transition:all .15s;}
+.fcrd:hover{border-color:var(--gn);}
+.fci{font-size:20px;margin-bottom:3px;}
+.fct{font-size:11px;font-weight:700;}
+.fcs{font-size:10px;color:#888;margin-top:1px;}
+.fcon{display:none;background:#f0fff4;border:2px solid var(--gn);border-radius:12px;padding:13px;font-size:12px;line-height:1.9;margin-bottom:8px;}
+.fcon a{color:var(--bl);text-decoration:none;font-weight:700;}
+
+/* PREMIUM */
+.pbox{background:linear-gradient(135deg,var(--dp),var(--vt));border-radius:20px;padding:22px 18px;color:#fff;text-align:center;margin:16px 0;}
+.pamt{font-size:28px;font-weight:800;}
+.ppill{display:inline-block;background:linear-gradient(135deg,var(--or),var(--pk));padding:3px 14px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:8px;}
+.pfeats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:12px 0;font-size:11px;}
+.pf{background:rgba(255,255,255,.1);border-radius:9px;padding:8px;}
+.pbtn{width:100%;padding:14px;background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 6px 20px rgba(255,107,53,.5);min-height:52px;animation:glow 2s ease infinite;}
+@keyframes glow{0%,100%{box-shadow:0 6px 20px rgba(255,107,53,.5);}50%{box-shadow:0 6px 32px rgba(255,60,172,.7);}}
+
+/* POPUP */
+.popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center;padding:16px;}
+.pbox2{background:#fff;border-radius:22px;padding:26px 20px;max-width:320px;width:100%;text-align:center;}
+.popbtn{width:100%;padding:13px;background:linear-gradient(135deg,var(--or),var(--pk));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;min-height:48px;}
+
+/* FOOTER */
+footer{text-align:center;padding:18px 14px;border-top:2px dashed #f0e8ff;font-size:11px;color:#aaa;margin-top:8px;}
+footer a{color:var(--or);text-decoration:none;font-weight:700;}
+.flogo{font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--or),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:5px;}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .tabs{grid-template-columns:repeat(2,1fr);}
+  .g2,.pfeats,.skill-cards,.fgrid{grid-template-columns:1fr;}
+  .hero h1{font-size:20px;}
+  .wrap{padding:11px 11px 60px;}
+  .panel{padding:14px;}
+  .stabs{flex-direction:column;}
+  .stab{min-width:unset;}
+}
+@media(max-width:380px){
+  .stabs{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- SUCCESS POPUP -->
+<div class="popup" id="suc-pop">
+  <div class="pbox2">
+    <div style="font-size:48px;margin-bottom:8px;">🎉</div>
+    <div id="suc-t" style="font-size:19px;font-weight:700;color:#065f46;margin-bottom:5px;"></div>
+    <div id="suc-s" style="font-size:12px;color:#888;margin-bottom:16px;line-height:1.6;"></div>
+    <button class="popbtn" onclick="document.getElementById('suc-pop').style.display='none'">🚀 शुरू करो / Let's Go!</button>
+  </div>
+</div>
+
+<!-- LOGIN SCREEN -->
+<div id="screen-login">
+  <div class="lbox">
+    <div class="llogo">🚀</div>
+    <div class="ltitle">युवा रोज़गार सेतु</div>
+    <div class="lsub hi">CV बनाओ • Career Roadmap • Skill Gap जानो<br>Educated Youth के लिए — Free शुरू करो!</div>
+    <button class="lbtn lbtn-g" onclick="loginGoogle()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="G">
+      Google से Login करो
+    </button>
+    <div class="ldiv">या / or</div>
+    <button class="lbtn lbtn-p" onclick="showPhone()">📱 Mobile Number से Login</button>
+    <div class="otp-sec" id="otp-sec">
+      <div id="recaptcha-container" style="margin-bottom:8px;"></div>
+      <div class="ph-wrap">
+        <span class="ph-pre">🇮🇳 +91</span>
+        <input class="linput" type="tel" id="ph-in" placeholder="Mobile Number" maxlength="10">
+      </div>
+      <button class="lotp-btn" id="send-btn" onclick="sendOTP()">OTP भेजो / Send OTP</button>
+      <div id="otp-ver" style="display:none;margin-top:10px;">
+        <input class="linput" type="text" id="otp-in" placeholder="6-digit OTP" maxlength="6" style="margin-bottom:10px;">
+        <button class="lotp-btn" onclick="verifyOTP()">✅ Verify करो</button>
+      </div>
+      <div id="otp-msg" style="font-size:12px;margin-top:8px;color:#888;min-height:18px;"></div>
+    </div>
+    <div class="lnote">🔒 Safe & Secure Login — Powered by Google Firebase</div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="screen-app">
+
+  <div class="topbar">
+    <div class="tlogo">युवा रोज़गार सेतु 🚀</div>
+    <div class="tright">
+      <img class="upic" id="upic" src="https://ui-avatars.com/api/?name=Y&background=FF6B35&color=fff" alt="">
+      <span class="unm" id="unm">User</span>
+      <button class="lout" onclick="logoutUser()">Logout</button>
+    </div>
+  </div>
+
+  <nav>
+    <div class="logo">युवा रोज़गार सेतु</div>
+    <div class="nright">
+      <span class="cpill" id="cpill">⚡ 2 Credits</span>
+      <button class="buybtn" onclick="buyCredits()">+ ₹99</button>
+      <button class="langbtn" id="langbtn" onclick="toggleLang()">EN</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="htag">🇮🇳 India's Employment Platform for Educated Youth</div>
+    <h1 id="h1">आपका सपना,<br><span>हमारी ज़िम्मेदारी!</span></h1>
+    <p id="hp" class="hi">CV बनाओ • Skill Gap जानो • Dream Job पाओ</p>
+  </div>
+  <svg viewBox="0 0 1440 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;background:#FFF9F0;"><path d="M0,18 C480,36 960,0 1440,18 L1440,36 L0,36 Z" fill="#FFF9F0"/></svg>
+
+  <div class="wrap">
+
+    <div class="stats">
+      <div class="stat"><div class="sn">8.3Cr</div><div class="se">Unemployed Youth</div></div>
+      <div class="stat"><div class="sn">2 Min</div><div class="se">CV Ready</div></div>
+      <div class="stat"><div class="sn">Free</div><div class="se">To Start</div></div>
+      <div class="stat"><div class="sn">🎙️</div><div class="se">Voice Input</div></div>
+    </div>
+
+    <div class="mot">
+      <div class="mot-t" id="mot-t">नमस्ते! तुम कर सकते हो! 💪</div>
+      <div class="mot-s hi" id="mot-s">हर सफल इंसान एक बार वहीं था जहाँ तुम आज हो।</div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab on" onclick="sw('cv')"><span class="ti">📄</span><div class="tn">CV Builder</div><div class="th">CV बनाएं</div></div>
+      <div class="tab" onclick="sw('rocket')"><span class="ti">🚀</span><div class="tn">Rozgar Rocket</div><div class="th">Roadmap</div></div>
+      <div class="tab" onclick="sw('skill')"><span class="ti">🎯</span><div class="tn">Skill Gap</div><div class="th">2 Credits</div></div>
+      <div class="tab" onclick="sw('free')"><span class="ti">🎁</span><div class="tn">Free Tools</div><div class="th">मुफ़्त</div></div>
+    </div>
+
+    <!-- ══ CV PANEL ══ -->
+    <div class="panel on" id="panel-cv">
+      <div class="ptag">📄 CV Builder</div>
+      <div class="ptitle" id="cv-title">Killer CV बनाओ! 🔥</div>
+      <div class="psub hi" id="cv-sub">Hindi या English में बोलो या टाइप करो — Professional CV मिलेगा</div>
+      <div class="stabs">
+        <div class="stab on" id="st-bld" onclick="setCVSub('build')">✨ <span id="st-bld-t">नया CV बनाओ</span></div>
+        <div class="stab" id="st-fix" onclick="setCVSub('fix')">🔧 <span id="st-fix-t">पुराना CV Fix करो</span></div>
+      </div>
+
+      <!-- BUILD -->
+      <div id="cv-build">
+        <div class="field"><label id="lnm">तुम्हारा नाम ✨</label>
+          <input type="text" id="cv-nm" placeholder="Ravi Kumar / रवि कुमार"></div>
+        <div class="g2">
+          <div class="field"><label id="lql">पढ़ाई 🎓</label>
+            <select id="cv-q"><option value="">Select</option><option>10th Pass</option><option>12th Pass</option><option>ITI/Diploma</option><option>Graduation</option><option>Post Graduation</option></select></div>
+          <div class="field"><label id="lfl">Target Field 🎯</label>
+            <select id="cv-f"><option value="">Select</option><option>IT/Software</option><option>Banking/Finance</option><option>Government/Sarkari</option><option>Teaching</option><option>Healthcare</option><option>Manufacturing</option><option>Sales/Marketing</option><option>Agriculture</option></select></div>
+        </div>
+        <div class="field"><label id="lab">अपने बारे में बताओ 💬 <span class="hint hi" id="hab">🎙️ Mic दबाओ और बोलो — या type करो!</span></label>
+          <div class="voice-wrap">
+            <textarea id="cv-a" placeholder="जैसे: B.Com kiya hai, uncle ki dukan par kaam kiya, Tally jaanta hoon, NSS volunteer tha..."></textarea>
+            <button class="mic-btn" onclick="startVoice('cv-a')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="field"><label id="ljd">Job Description (optional) 📋</label>
+          <div class="voice-wrap">
+            <textarea id="cv-jd" placeholder="Paste job description here..." style="min-height:55px;"></textarea>
+            <button class="mic-btn mic-btn-top" onclick="startVoice('cv-jd')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <button class="gbtn" id="cv-btn" onclick="doCV()">✨ <span id="cv-btn-t">मेरा CV बनाओ!</span></button>
+      </div>
+
+      <!-- FIX -->
+      <div id="cv-fix" style="display:none;">
+        <div class="field"><label id="lfx">पुराना CV यहाँ paste करो 📋<span class="hint hi" id="hfx">Grammar, Format, Language — सब fix होगा!</span></label>
+          <div class="voice-wrap">
+            <textarea id="cv-old" style="min-height:140px;" placeholder="Paste your existing CV here...&#10;&#10;Example:&#10;My self Ravi Kumar. I doing B.Com. I am hard working boy. I know computer. I wants job..."></textarea>
+            <button class="mic-btn" onclick="startVoice('cv-old')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="field"><label>Target Field 🎯</label>
+          <select id="fix-f"><option value="">Select</option><option>IT/Software</option><option>Banking/Finance</option><option>Government/Sarkari</option><option>Teaching</option><option>Healthcare</option><option>Manufacturing</option><option>Sales/Marketing</option></select></div>
+        <button class="gbtn" id="fix-btn" onclick="doFix()">🔧 <span id="fix-btn-t">CV Fix करो!</span></button>
+      </div>
+
+      <div class="ld" id="cv-ld">AI बना रहा है <span class="dots"><span></span><span></span><span></span></span></div>
+      <div class="ncred" id="cv-nc"><h3>⚡ Credits खत्म!</h3><p class="hi">₹99 में 10 Credits खरीदो</p><button class="ncbtn" onclick="buyCredits()">₹99 में खरीदो</button></div>
+      <div class="res" id="cv-res">
+        <div class="rbadges"><span class="rb rb1">🎉 CV Ready!</span><span class="rb rb2">✅ Professional</span></div>
+        <div class="rbox" id="cv-out"></div>
+        <div class="abtns">
+          <button class="abtn abtn-dl" onclick="printEl('cv-out','CV')">📥 Download</button>
+          <button class="abtn abtn-wa" onclick="wa('cv')">📲 Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ROZGAR ROCKET ══ -->
+    <div class="panel" id="panel-rocket">
+      <div class="ptag">🚀 Rozgar Rocket</div>
+      <div class="ptitle" id="rk-title">Dream Job का Roadmap! 🌟</div>
+      <div class="psub hi" id="rk-sub">बताओ कहाँ हो — 90 दिन में job-ready बनाएंगे!</div>
+      <div class="stabs">
+        <div class="stab on" id="st-rd" onclick="setRkSub('road')">🗺️ Roadmap</div>
+        <div class="stab" id="st-cv2" onclick="setRkSub('cover')">✉️ Cover Letter</div>
+        <div class="stab" id="st-int" onclick="setRkSub('inter')">🎤 Interview Prep</div>
+      </div>
+
+      <!-- ROADMAP -->
+      <div id="rk-road">
+        <div class="field"><label id="lql2">पढ़ाई 🎓</label>
+          <select id="rk-q"><option value="">Select</option><option>10th Pass</option><option>12th Pass</option><option>ITI/Diploma</option><option>B.A/B.Sc/B.Com</option><option>B.Tech/B.E</option><option>MBA/M.Com</option><option>M.Sc/M.A</option></select></div>
+        <div class="field"><label id="ldm">सपना क्या है? 🌈</label>
+          <div class="voice-wrap">
+            <input type="text" id="rk-d" placeholder="software developer, bank job, teacher, apna business...">
+            <button class="mic-btn mic-btn-top" onclick="startVoice('rk-d')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="g2">
+          <div class="field"><label id="lst">राज्य 📍</label>
+            <select id="rk-st"><option value="">Select</option><option>Uttar Pradesh</option><option>Bihar</option><option>Madhya Pradesh</option><option>Rajasthan</option><option>Telangana</option><option>Maharashtra</option><option>Tamil Nadu</option><option>West Bengal</option><option>Jharkhand</option><option>Other</option></select></div>
+          <div class="field"><label id="ltm">रोज़ का समय ⏰</label>
+            <select id="rk-t"><option value="">Select</option><option>30 minutes</option><option>1 hour</option><option>2 hours</option><option>3+ hours</option></select></div>
+        </div>
+        <div class="field"><label id="lch">सबसे बड़ी दिक्कत? 😅<span class="hint hi">खुल के बताओ!</span></label>
+          <div class="voice-wrap">
+            <textarea id="rk-c" style="min-height:60px;" placeholder="English nahi aati, gap hai, paise nahi hain..."></textarea>
+            <button class="mic-btn" onclick="startVoice('rk-c')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <button class="gbtn" id="rk-btn" onclick="doRoadmap()">🚀 <span id="rk-btn-t">Roadmap बनाओ!</span></button>
+      </div>
+
+      <!-- COVER LETTER -->
+      <div id="rk-cover" style="display:none;">
+        <div class="field"><label>तुम्हारा नाम</label><input type="text" id="cov-nm" placeholder="Your Name"></div>
+        <div class="field"><label>Job Role applying for</label>
+          <div class="voice-wrap">
+            <input type="text" id="cov-role" placeholder="e.g. Bank Clerk, Software Developer, Teacher">
+            <button class="mic-btn mic-btn-top" onclick="startVoice('cov-role')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="field"><label>Your background (Hindi/English) 💬</label>
+          <div class="voice-wrap">
+            <textarea id="cov-bg" placeholder="B.Com kiya hai, 2 saal ka experience hai, computer jaanta hoon..."></textarea>
+            <button class="mic-btn" onclick="startVoice('cov-bg')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <button class="gbtn" id="cov-btn" onclick="doCover()">✉️ Cover Letter बनाओ!</button>
+      </div>
+
+      <!-- INTERVIEW PREP -->
+      <div id="rk-inter" style="display:none;">
+        <div class="field"><label>Job Role 🎯</label>
+          <div class="voice-wrap">
+            <input type="text" id="int-role" placeholder="Bank Clerk, Software Developer, Teacher...">
+            <button class="mic-btn mic-btn-top" onclick="startVoice('int-role')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="field"><label>Your background 💬</label>
+          <div class="voice-wrap">
+            <textarea id="int-bg" placeholder="Fresher hoon, B.Com kiya hai, ya experience batao..."></textarea>
+            <button class="mic-btn" onclick="startVoice('int-bg')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <button class="gbtn" id="int-btn" onclick="doInterview()">🎤 Interview Questions पाओ!</button>
+      </div>
+
+      <div class="ld" id="rk-ld">AI तैयार कर रहा है <span class="dots"><span></span><span></span><span></span></span></div>
+      <div class="ncred" id="rk-nc"><h3>⚡ Credits खत्म!</h3><p class="hi">₹99 में 10 Credits खरीदो</p><button class="ncbtn" onclick="buyCredits()">₹99 में खरीदो</button></div>
+      <div class="res" id="rk-res">
+        <div class="rbadges"><span class="rb rb1">🚀 Ready!</span><span class="rb rb2">✅ Personalised</span></div>
+        <div class="rbox" id="rk-out"></div>
+        <div class="abtns">
+          <button class="abtn abtn-dl" onclick="printEl('rk-out','Result')">📥 Download</button>
+          <button class="abtn abtn-wa" onclick="wa('rocket')">📲 Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SKILL GAP PANEL ══ -->
+    <div class="panel" id="panel-skill">
+      <div class="ptag">🎯 Skill Gap Analyser</div>
+      <div class="ptitle" id="sg-title">Job के लिए कितने Ready हो? 🔍</div>
+      <div class="psub hi" id="sg-sub">CV + Job Description दो — AI बताएगा क्या missing है और कैसे भरो! (2 Credits)</div>
+
+      <div id="sg-input">
+        <div class="field"><label id="lsgcv">तुम्हारा CV paste करो 📄<span class="hint">Your current CV or skills summary</span></label>
+          <div class="voice-wrap">
+            <textarea id="sg-cv" style="min-height:110px;" placeholder="Paste your CV here, or speak your skills and experience...&#10;&#10;e.g. I have done B.Com, I know Tally, MS Excel, some Python..."></textarea>
+            <button class="mic-btn" onclick="startVoice('sg-cv')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div class="field"><label id="lsgjd">Job Description paste करो 🎯<span class="hint">The job you want to apply for</span></label>
+          <div class="voice-wrap">
+            <textarea id="sg-jd" style="min-height:110px;" placeholder="Paste the job description here, or speak what kind of job you want...&#10;&#10;e.g. I want to apply for Data Analyst role requiring Python, SQL, Excel..."></textarea>
+            <button class="mic-btn" onclick="startVoice('sg-jd')" title="Voice Input">🎙️</button>
+          </div>
+        </div>
+        <div style="background:#FFF0E8;border-radius:11px;padding:11px;font-size:12px;color:#666;margin-bottom:11px;line-height:1.6;">
+          💡 यह feature <strong>2 Credits</strong> लेता है — CV और JD दोनों compare करके detailed analysis देता है।
+        </div>
+        <button class="gbtn" id="sg-btn" onclick="doSkillGap()">🔍 <span id="sg-btn-t">Skill Gap Analyse करो! (2 Credits)</span></button>
+      </div>
+
+      <div class="ld" id="sg-ld">Analysing your profile <span class="dots"><span></span><span></span><span></span></span></div>
+      <div class="ncred" id="sg-nc"><h3>⚡ 2 Credits चाहिए!</h3><p class="hi">₹99 में 10 Credits खरीदो</p><button class="ncbtn" onclick="buyCredits()">₹99 में खरीदो</button></div>
+
+      <!-- SKILL GAP RESULT -->
+      <div class="res" id="sg-res">
+        <div class="rbadges"><span class="rb rb1">🎯 Analysis Done!</span><span class="rb rb2">✅ Detailed Report</span></div>
+        <div class="score-box" id="sg-score-box">
+          <div class="score-num" id="sg-score-num">0%</div>
+          <div class="score-label" id="sg-score-lbl">Job Match Score</div>
+          <div class="score-bar-bg"><div class="score-bar" id="sg-bar" style="width:0%"></div></div>
+        </div>
+        <div class="skill-cards" id="sg-cards">
+          <div class="skill-card sk-have"><div class="sk-title">✅ Skills You Have</div><div id="sg-have"></div></div>
+          <div class="skill-card sk-miss"><div class="sk-title">❌ Skills Missing</div><div id="sg-miss"></div></div>
+          <div class="skill-card sk-upg"><div class="sk-title">⚠️ Skills to Upgrade</div><div id="sg-upg"></div></div>
+          <div class="skill-card sk-plan"><div class="sk-title">📋 Action Plan</div><div id="sg-plan"></div></div>
+        </div>
+        <div class="rbox" id="sg-out" style="margin-bottom:8px;"></div>
+        <div class="abtns">
+          <button class="abtn abtn-dl" onclick="printEl('sg-out','Skill Gap Report')">📥 Download Report</button>
+          <button class="abtn abtn-re" onclick="reanalyse()">🔄 Re-analyse</button>
+          <button class="abtn abtn-wa" onclick="wa('skill')">📲 Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ FREE TOOLS ══ -->
+    <div class="panel" id="panel-free">
+      <div class="ptag">🎁 Free Tools</div>
+      <div class="ptitle" id="fr-title">Free Resources — No Credits!</div>
+      <div class="psub" id="fr-sub">Always free • No login required</div>
+      <div class="fgrid">
+        <div class="fcrd" onclick="tf('tips')"><div class="fci">📋</div><div class="fct">CV Tips</div><div class="fcs">Golden rules</div></div>
+        <div class="fcrd" onclick="tf('portals')"><div class="fci">🌐</div><div class="fct">Job Portals</div><div class="fcs">Top 8 sites</div></div>
+        <div class="fcrd" onclick="tf('itips')"><div class="fci">🎤</div><div class="fct">Interview Tips</div><div class="fcs">Hindi Q&A</div></div>
+        <div class="fcrd" onclick="tf('courses')"><div class="fci">🎓</div><div class="fct">Free Courses</div><div class="fcs">SWAYAM, NPTEL</div></div>
+      </div>
+      <div class="fcon" id="fc-tips">✅ CV 1-2 page का होना चाहिए<br>✅ Action words: Led, Built, Managed, Achieved<br>✅ Numbers डालो — Team of 8, Sales 30% बढ़ाई<br>✅ Email: firstname.lastname@gmail.com<br>✅ LinkedIn link ज़रूर डालो<br>✅ Font: Arial, Size 11-12<br>✅ हर job के लिए CV customize करो<br>✅ "Responsible for" की जगह "Achieved" लिखो<br>✅ Photo optional — field-specific करो</div>
+      <div class="fcon" id="fc-portals"><a href="https://ncs.gov.in" target="_blank">🏛️ NCS Portal</a> — Govt jobs free<br><a href="https://naukri.com" target="_blank">💼 Naukri.com</a> — All sectors<br><a href="https://internshala.com" target="_blank">🎓 Internshala</a> — Freshers & interns<br><a href="https://linkedin.com/jobs" target="_blank">🔗 LinkedIn Jobs</a> — Corporate<br><a href="https://workindia.in" target="_blank">🇮🇳 WorkIndia</a> — Hindi belt<br><a href="https://sarkariresult.com" target="_blank">📋 Sarkari Result</a> — Govt exams<br><a href="https://freshersworld.com" target="_blank">🌟 Freshers World</a> — Entry level<br><a href="https://shine.com" target="_blank">⭐ Shine.com</a> — All India</div>
+      <div class="fcon" id="fc-itips">❓ Tell me about yourself?<br>💡 "मैं [name] हूँ, [degree] की है। [field] में [experience] है।"<br><br>❓ Your strengths?<br>💡 Job related — Quick learner, Team player, Problem solver<br><br>❓ Why this company?<br>💡 Company research करो — values mention करो<br><br>❓ Salary expectation?<br>💡 Industry standard + 10-15% ऊपर माँगो<br><br>✅ 10 min पहले पहुँचो<br>✅ Formal clothes पहनो<br>✅ Phone silent करो<br>✅ Smart questions ज़रूर पूछो</div>
+      <div class="fcon" id="fc-courses"><a href="https://swayam.gov.in" target="_blank">🏛️ SWAYAM</a> — 1000+ free Hindi courses<br><a href="https://nptel.ac.in" target="_blank">🎓 NPTEL</a> — IIT courses free + certificate<br><a href="https://youtube.com/@CodeWithHarry" target="_blank">📺 CodeWithHarry</a> — Coding Hindi में<br><a href="https://youtube.com/@ApnaCollegeOfficial" target="_blank">📺 Apna College</a> — DSA & Web Dev<br><a href="https://skillindiadigital.gov.in" target="_blank">🇮🇳 Skill India Digital</a> — Govt certified<br><a href="https://coursera.org" target="_blank">🌍 Coursera</a> — Audit mode free<br><a href="https://pmkvyofficial.org" target="_blank">📜 PMKVY</a> — Free govt certification</div>
+    </div>
+
+    <!-- PREMIUM SECTION -->
+    <div class="pbox" id="prem-sec">
+      <div class="ppill">⭐ BEST VALUE</div>
+      <div class="pamt">₹99 = 10 Credits</div>
+      <div style="font-size:11px;opacity:.8;margin-bottom:12px;" class="hi">Credits expire नहीं होते — जब चाहो use करो!</div>
+      <div class="pfeats">
+        <div class="pf">📄 CV Build = 1 credit</div>
+        <div class="pf">🔧 CV Fix = 1 credit</div>
+        <div class="pf">🗺️ Roadmap = 1 credit</div>
+        <div class="pf">✉️ Cover Letter = 1 credit</div>
+        <div class="pf">🎤 Interview Prep = 1 credit</div>
+        <div class="pf">🎯 Skill Gap = 2 credits</div>
+      </div>
+      <div style="font-size:11px;opacity:.7;margin-bottom:14px;" class="hi">🍕 एक pizza की कीमत — job लगने पर ₹10,000+/month!</div>
+      <button class="pbtn" onclick="buyCredits()">⚡ ₹99 में 10 Credits खरीदो!</button>
+      <div style="font-size:11px;opacity:.55;margin-top:10px;">UPI • PhonePe • GPay • Paytm • Cards • Net Banking</div>
+    </div>
+
+    <footer>
+      <span class="flogo">युवा रोज़गार सेतु 🚀</span>
+      <a href="mailto:yuvarozgarsetu@gmail.com">📧 yuvarozgarsetu@gmail.com</a>
+      <div style="margin-top:5px;">© 2026 युवा रोज़गार सेतु • Made with ❤️ for India's Educated Youth</div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6v7dllxbiAke-y4z-8MRY9pSRjx9JRVs",
+  authDomain: "yuva-rozgar-setu.firebaseapp.com",
+  projectId: "yuva-rozgar-setu",
+  storageBucket: "yuva-rozgar-setu.firebasestorage.app",
+  messagingSenderId: "659997894469",
+  appId: "1:659997894469:web:e96d0d52c88775e06f002c"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+let confirmRes = null;
+
+window._spend = async function(n) {
+  n = n || 1;
+  if (!window._cred || window._cred < n) return false;
+  window._cred -= n;
+  updateCP();
+  try {
+    const ref = doc(db, "users", window._uid);
+    await updateDoc(ref, { credits: increment(-n), totalUses: increment(1) });
+  } catch(e) {}
+  return true;
+};
+
+window._addCreds = async function(n) {
+  window._cred = (window._cred || 0) + n;
+  updateCP();
+  try {
+    const ref = doc(db, "users", window._uid);
+    await updateDoc(ref, { credits: increment(n), lastPayment: new Date() });
+  } catch(e) {}
+};
+
+function updateCP() {
+  document.getElementById("cpill").textContent = "⚡ " + (window._cred || 0) + " Credits";
+}
+
+window.loginGoogle = async function() {
+  try { await signInWithPopup(auth, provider); }
+  catch(e) { alert("Login failed: " + e.message); }
+};
+
+window.showPhone = function() {
+  document.getElementById("otp-sec").style.display = "block";
+};
+
+window.sendOTP = async function() {
+  const ph = document.getElementById("ph-in").value.trim();
+  if (!ph || ph.length !== 10) { alert("10 digit mobile number daalo!"); return; }
+  document.getElementById("otp-msg").textContent = "OTP भेज रहे हैं...";
+  try {
+    if (!window._rcv) {
+      window._rcv = new RecaptchaVerifier(auth, "recaptcha-container", { size: "invisible" });
+    }
+    confirmRes = await signInWithPhoneNumber(auth, "+91" + ph, window._rcv);
+    document.getElementById("otp-ver").style.display = "block";
+    document.getElementById("send-btn").style.display = "none";
+    document.getElementById("otp-msg").textContent = "✅ OTP sent! Check your mobile.";
+  } catch(e) { document.getElementById("otp-msg").textContent = "❌ " + e.message; }
+};
+
+window.verifyOTP = async function() {
+  const otp = document.getElementById("otp-in").value.trim();
+  if (!otp || otp.length !== 6) { alert("6 digit OTP daalo!"); return; }
+  document.getElementById("otp-msg").textContent = "Verifying...";
+  try {
+    await confirmRes.confirm(otp);
+  } catch(e) { document.getElementById("otp-msg").textContent = "❌ Wrong OTP. Try again."; }
+};
+
+onAuthStateChanged(auth, async function(user) {
+  if (user) {
+    window._uid = user.uid;
+    window._email = user.email || user.phoneNumber || "";
+    document.getElementById("screen-login").style.display = "none";
+    document.getElementById("screen-app").style.display = "block";
+    const nm = user.displayName ? user.displayName.split(" ")[0] : (user.phoneNumber || "User");
+    document.getElementById("unm").textContent = nm;
+    document.getElementById("mot-t").textContent = "नमस्ते, " + nm + "! तुम कर सकते हो! 💪";
+    if (user.photoURL) document.getElementById("upic").src = user.photoURL;
+    const ref = doc(db, "users", user.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) {
+      await setDoc(ref, { email: user.email || "", phone: user.phoneNumber || "", name: user.displayName || "", credits: 2, totalUses: 0, createdAt: new Date() });
+      window._cred = 2;
+      showSuc("🎉 Welcome to युवा रोज़गार सेतु!", "2 Free Credits मिले! CV बनाओ, Skill Gap जानो।");
+    } else {
+      window._cred = snap.data().credits || 0;
+    }
+    updateCP();
+  } else {
+    document.getElementById("screen-login").style.display = "flex";
+    document.getElementById("screen-app").style.display = "none";
+  }
+});
+
+window.logoutUser = async function() { await signOut(auth); };
+
+window.buyCredits = async function() {
+  try {
+    const orderRes = await fetch("/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ uid: window._uid, email: window._email })
+    });
+    const order = await orderRes.json();
+    if (order.error) { alert("Error: " + order.error); return; }
+    const opts = {
+      key: "RAZORPAY_KEY_ID_HERE",
+      amount: order.amount,
+      currency: "INR",
+      order_id: order.orderId,
+      name: "युवा रोज़गार सेतु",
+      description: "10 Credits Pack",
+      theme: { color: "#FF6B35" },
+      prefill: { email: window._email },
+      handler: async function(response) {
+        await window._addCreds(10);
+        showSuc("🎉 Payment Successful!", "10 Credits add हो गए! अब सभी features use करो।");
+      },
+      modal: { ondismiss: function() {} }
+    };
+    const rzp = new window.Razorpay(opts);
+    rzp.on("payment.failed", function(r) { alert("Payment failed: " + r.error.description); });
+    rzp.open();
+  } catch(e) { alert("Error: " + e.message); }
+};
+
+window.showSuc = function(t, s) {
+  document.getElementById("suc-t").textContent = t;
+  document.getElementById("suc-s").textContent = s;
+  document.getElementById("suc-pop").style.display = "flex";
+};
+</script>
+
+<!-- MAIN SCRIPT -->
+<script>
+var lang = "hi";
+var currentVoiceBtn = null;
+
+// VOICE TYPING
+function startVoice(targetId) {
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert("Voice typing works on Chrome browser. Please open this site in Chrome!"); return; }
+  var el = document.getElementById(targetId);
+  var btn = el.parentElement.querySelector(".mic-btn");
+  if (currentVoiceBtn && currentVoiceBtn._rec) {
+    currentVoiceBtn._rec.stop();
+    currentVoiceBtn.classList.remove("listening");
+    currentVoiceBtn.textContent = "🎙️";
+    if (currentVoiceBtn === btn) { currentVoiceBtn = null; return; }
+  }
+  var rec = new SR();
+  rec.lang = lang === "hi" ? "hi-IN" : "en-IN";
+  rec.continuous = true;
+  rec.interimResults = true;
+  var finalT = el.value || "";
+  btn.classList.add("listening");
+  btn.textContent = "🔴";
+  btn._rec = rec;
+  currentVoiceBtn = btn;
+  rec.onresult = function(e) {
+    var interim = "";
+    var final2 = "";
+    for (var i = e.resultIndex; i < e.results.length; i++) {
+      if (e.results[i].isFinal) { final2 += e.results[i][0].transcript; }
+      else { interim += e.results[i][0].transcript; }
+    }
+    finalT += final2;
+    el.value = finalT + interim;
+  };
+  rec.onerror = function() { btn.classList.remove("listening"); btn.textContent = "🎙️"; btn._rec = null; currentVoiceBtn = null; };
+  rec.onend = function() { el.value = finalT; btn.classList.remove("listening"); btn.textContent = "🎙️"; btn._rec = null; currentVoiceBtn = null; };
+  rec.start();
+}
+
+// TAB SWITCH
+function sw(t) {
+  ["cv","rocket","skill","free"].forEach(function(x) {
+    document.getElementById("panel-"+x).classList.toggle("on", x===t);
+  });
+  document.querySelectorAll(".tab").forEach(function(e,i) {
+    e.classList.toggle("on", ["cv","rocket","skill","free"][i]===t);
+  });
+}
+
+// CV SUBTABS
+function setCVSub(s) {
+  document.getElementById("cv-build").style.display = s==="build"?"block":"none";
+  document.getElementById("cv-fix").style.display = s==="fix"?"block":"none";
+  document.getElementById("st-bld").classList.toggle("on", s==="build");
+  document.getElementById("st-fix").classList.toggle("on", s==="fix");
+  hideAll("cv");
+}
+
+// ROCKET SUBTABS
+function setRkSub(s) {
+  document.getElementById("rk-road").style.display = s==="road"?"block":"none";
+  document.getElementById("rk-cover").style.display = s==="cover"?"block":"none";
+  document.getElementById("rk-inter").style.display = s==="inter"?"block":"none";
+  document.getElementById("st-rd").classList.toggle("on", s==="road");
+  document.getElementById("st-cv2").classList.toggle("on", s==="cover");
+  document.getElementById("st-int").classList.toggle("on", s==="inter");
+  hideAll("rk");
+}
+
+function hideAll(id) {
+  ["ld","nc","res"].forEach(function(x) { document.getElementById(id+"-"+x).style.display="none"; });
+}
+
+// LANGUAGE TOGGLE
+function toggleLang() {
+  lang = lang==="hi"?"en":"hi";
+  document.getElementById("langbtn").textContent = lang==="hi"?"EN":"हिंदी";
+  if (lang==="en") {
+    document.getElementById("h1").innerHTML = "Your Dream,<br><span>Our Responsibility!</span>";
+    document.getElementById("hp").textContent = "Build CV • Find Skill Gaps • Land Dream Job";
+    document.getElementById("mot-s").textContent = "Every successful person was once where you are today.";
+    document.getElementById("cv-title").textContent = "Build Your Killer CV! 🔥";
+    document.getElementById("cv-sub").textContent = "Speak or type in Hindi/English — Get professional CV";
+    document.getElementById("sg-btn-t").textContent = "Analyse Skill Gap! (2 Credits)";
+    document.getElementById("rk-btn-t").textContent = "Build My Roadmap!";
+    document.getElementById("fr-title").textContent = "Free Resources!";
+  } else {
+    document.getElementById("h1").innerHTML = "आपका सपना,<br><span>हमारी ज़िम्मेदारी!</span>";
+    document.getElementById("hp").textContent = "CV बनाओ • Skill Gap जानो • Dream Job पाओ";
+    document.getElementById("mot-s").textContent = "हर सफल इंसान एक बार वहीं था जहाँ तुम आज हो।";
+    document.getElementById("cv-title").textContent = "Killer CV बनाओ! 🔥";
+    document.getElementById("cv-sub").textContent = "Hindi या English में बोलो या टाइप करो — Professional CV मिलेगा";
+    document.getElementById("sg-btn-t").textContent = "Skill Gap Analyse करो! (2 Credits)";
+    document.getElementById("rk-btn-t").textContent = "Roadmap बनाओ!";
+    document.getElementById("fr-title").textContent = "Free Resources — No Credits!";
+  }
+}
+
+// FREE FEATURES
+function tf(id) {
+  ["tips","portals","itips","courses"].forEach(function(x) {
+    var el = document.getElementById("fc-"+x);
+    el.style.display = (x===id && el.style.display!=="block")?"block":"none";
+  });
+}
+
+// AI CALL
+async function aiCall(messages, maxTok) {
+  var r = await fetch("/api/claude", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages: messages, max_tokens: maxTok || 1200 })
+  });
+  var d = await r.json();
+  if (d.error) throw new Error(d.error.message);
+  return (d.content && d.content[0] && d.content[0].text) || "Response not received.";
+}
+
+function setLd(id, on) {
+  document.getElementById(id+"-ld").style.display = on?"block":"none";
+  var b = document.getElementById(id+"-btn");
+  if (b) b.disabled = on;
+  document.getElementById(id+"-nc").style.display = "none";
+  document.getElementById(id+"-res").style.display = "none";
+}
+
+function setRes(id, txt) {
+  document.getElementById(id+"-out").textContent = txt;
+  document.getElementById(id+"-res").style.display = "block";
+  document.getElementById(id+"-ld").style.display = "none";
+  var b = document.getElementById(id+"-btn");
+  if (b) b.disabled = false;
+}
+
+async function checkCred(id, n) {
+  n = n || 1;
+  if (!window._cred || window._cred < n) {
+    document.getElementById(id+"-nc").style.display = "block";
+    return false;
+  }
+  return await window._spend(n);
+}
+
+// CV BUILD
+async function doCV() {
+  var a = document.getElementById("cv-a").value.trim();
+  if (!a) { alert(lang==="hi"?"अपने बारे में बताओ!":"Tell us about yourself!"); return; }
+  if (!await checkCred("cv",1)) return;
+  setLd("cv", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = "Expert CV writer for Indian educated youth. Warm helpful tone.\n" +
+      "Name:" + document.getElementById("cv-nm").value + ", Qual:" + document.getElementById("cv-q").value +
+      ", Field:" + document.getElementById("cv-f").value + "\nAbout (user's own words, may be Hindi/English mix): " + a +
+      (document.getElementById("cv-jd").value ? "\nJob Description: " + document.getElementById("cv-jd").value.substring(0,300) : "") +
+      "\n\nTasks:\n1. " + (isHi?"Write 2 warm Hindi encouragement lines first.":"Write 1 brief English encouragement line.") +
+      "\n2. Create complete professional English CV. Transform informal/Hindi descriptions to professional English " +
+      "(e.g. 'uncle ki dukan par kaam kiya' = 'Assisted in retail operations and customer service'). " +
+      "ATS-friendly format: Contact Info | Professional Summary | Education | Experience/Projects | Skills | Certifications." +
+      "\n3. " + (isHi?"Write 2 Hindi lines on next steps.":"Write 1 line on next steps.");
+    var t = await aiCall([{ role:"user", content: prompt }]);
+    setRes("cv", t);
+  } catch(e) { setRes("cv","Error: "+e.message); }
+}
+
+// CV FIX
+async function doFix() {
+  var old = document.getElementById("cv-old").value.trim();
+  if (!old) { alert(lang==="hi"?"पुराना CV paste करो!":"Paste your old CV!"); return; }
+  if (!await checkCred("cv",1)) return;
+  setLd("cv", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = "Expert CV editor for Indian educated youth.\nTarget field: " + document.getElementById("fix-f").value +
+      "\nOriginal CV to fix:\n" + old +
+      "\n\nFix tasks:\n1. Fix ALL grammar mistakes and spelling errors\n" +
+      "2. Translate any Hindi/mixed language to professional English\n" +
+      "3. Upgrade weak informal language to professional (e.g. 'I am hard working boy' = 'Dedicated professional with strong work ethic')\n" +
+      "4. Restructure into proper format: Contact | Summary | Education | Experience | Skills\n" +
+      "5. Make it ATS-friendly with action verbs\n" +
+      (isHi?"6. After the CV, write 2 Hindi lines explaining what was improved.":"6. After CV, briefly note what was improved.");
+    var t = await aiCall([{ role:"user", content: prompt }]);
+    setRes("cv", t);
+  } catch(e) { setRes("cv","Error: "+e.message); }
+}
+
+// ROADMAP
+async function doRoadmap() {
+  var d = document.getElementById("rk-d").value.trim();
+  if (!d) { alert(lang==="hi"?"अपना सपना बताओ!":"Tell us your dream!"); return; }
+  if (!await checkCred("rk",1)) return;
+  setLd("rk", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = (isHi?"Friendly career mentor. Respond in Hindi/Hinglish like an older sibling. Be warm and specific.":
+      "Friendly career mentor. Respond in English. Be warm, specific, actionable.") +
+      "\nQual:" + document.getElementById("rk-q").value + ", Dream: " + d +
+      ", State:" + document.getElementById("rk-st").value + ", Daily time:" + document.getElementById("rk-t").value +
+      ", Challenge: " + (document.getElementById("rk-c").value||"None stated") +
+      "\n\nCreate detailed 3-phase roadmap:\n1. One powerful encouragement line\n" +
+      "2. Honest skill gap (2-3 lines)\n" +
+      "3. Phase 1 (Days 1-30): 3 specific FREE resources — name real platforms like SWAYAM, NPTEL, CodeWithHarry, Apna College\n" +
+      "4. Phase 2 (Days 31-90): 2 specific certificates to earn — name actual courses with platforms\n" +
+      "5. Phase 3 (Days 91+): Exactly where to apply — 3 specific job portals with strategy\n" +
+      "6. Direct solution to their challenge\n" +
+      "7. Powerful closing motivation";
+    var t = await aiCall([{ role:"user", content: prompt }]);
+    setRes("rk", t);
+  } catch(e) { setRes("rk","Error: "+e.message); }
+}
+
+// COVER LETTER
+async function doCover() {
+  var role = document.getElementById("cov-role").value.trim();
+  var bg = document.getElementById("cov-bg").value.trim();
+  if (!role||!bg) { alert("Fill all fields!"); return; }
+  if (!await checkCred("rk",1)) return;
+  setLd("rk", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = "Write a professional English cover letter.\nName: " + (document.getElementById("cov-nm").value||"Applicant") +
+      "\nRole: " + role + "\nBackground: " + bg +
+      "\nRules: Under 200 words. 3 paragraphs: intro + why I am right + call to action. Professional yet warm. End: Yours sincerely." +
+      (isHi?"\nAfter the letter, write 2 Hindi lines on how to use and submit this cover letter.":"");
+    var t = await aiCall([{ role:"user", content: prompt }], 700);
+    setRes("rk", t);
+  } catch(e) { setRes("rk","Error: "+e.message); }
+}
+
+// INTERVIEW PREP
+async function doInterview() {
+  var role = document.getElementById("int-role").value.trim();
+  if (!role) { alert("Job role batao!"); return; }
+  if (!await checkCred("rk",1)) return;
+  setLd("rk", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = (isHi?"Friendly interview coach. Respond in Hinglish.":"Friendly interview coach. Respond in English.") +
+      "\nJob role: " + role + "\nBackground: " + (document.getElementById("int-bg").value||"Indian job seeker") +
+      "\nProvide:\n1. 8 most likely interview questions for this role\n" +
+      "2. Strong answer framework for each using candidate background\n" +
+      "3. Complete 'Tell me about yourself' answer (60-90 seconds)\n" +
+      "4. 3 smart questions to ask the interviewer\n" +
+      "5. 3 common mistakes to avoid\n" +
+      (isHi?"6. One powerful Hindi closing motivation line.":"");
+    var t = await aiCall([{ role:"user", content: prompt }]);
+    setRes("rk", t);
+  } catch(e) { setRes("rk","Error: "+e.message); }
+}
+
+// SKILL GAP ANALYSER
+async function doSkillGap() {
+  var cv = document.getElementById("sg-cv").value.trim();
+  var jd = document.getElementById("sg-jd").value.trim();
+  if (!cv) { alert(lang==="hi"?"अपना CV paste करो!":"Paste your CV!"); return; }
+  if (!jd) { alert(lang==="hi"?"Job Description paste करो!":"Paste the Job Description!"); return; }
+  if (!await checkCred("sg",2)) return;
+  setLd("sg", true);
+  var isHi = lang==="hi";
+  try {
+    var prompt = "Expert career analyst for Indian educated youth. Analyse CV against Job Description.\n" +
+      "CV:\n" + cv.substring(0,1000) + "\n\nJob Description:\n" + jd.substring(0,800) +
+      "\n\nProvide structured analysis in this exact format:\n" +
+      "MATCH_SCORE: [number 0-100]\n" +
+      "SKILLS_HAVE: [comma separated list of matching skills]\n" +
+      "SKILLS_MISSING: [comma separated list of required but absent skills]\n" +
+      "SKILLS_UPGRADE: [comma separated list of partially matching skills that need improvement]\n" +
+      "ACTION_PLAN: [3-4 specific free resources and steps]\n" +
+      "DETAILED_ANALYSIS:\n" +
+      (isHi?"[Write detailed analysis in Hindi/Hinglish — be encouraging and specific. Include free course links from SWAYAM/NPTEL/Coursera/YouTube. Give timeline estimate. End with strong motivation.]":
+      "[Write detailed analysis in English — be encouraging and specific. Include free course links. Give timeline estimate. End with strong motivation.]");
+    var t = await aiCall([{ role:"user", content: prompt }], 1500);
+    parseSkillGap(t);
+    document.getElementById("sg-ld").style.display = "none";
+    document.getElementById("sg-res").style.display = "block";
+    var sgb = document.getElementById("sg-btn");
+    if (sgb) sgb.disabled = false;
+  } catch(e) {
+    document.getElementById("sg-ld").style.display = "none";
+    document.getElementById("sg-out").textContent = "Error: " + e.message;
+    document.getElementById("sg-res").style.display = "block";
+    var sgb2 = document.getElementById("sg-btn");
+    if (sgb2) sgb2.disabled = false;
+  }
+}
+
+function parseSkillGap(text) {
+  var score = 0;
+  var have = ""; var miss = ""; var upg = ""; var plan = "";
+  var lines = text.split("\n");
+  var detailStart = false; var detail = [];
+  lines.forEach(function(line) {
+    if (line.startsWith("MATCH_SCORE:")) { score = parseInt(line.replace("MATCH_SCORE:","").trim()) || 0; }
+    else if (line.startsWith("SKILLS_HAVE:")) { have = line.replace("SKILLS_HAVE:","").trim(); }
+    else if (line.startsWith("SKILLS_MISSING:")) { miss = line.replace("SKILLS_MISSING:","").trim(); }
+    else if (line.startsWith("SKILLS_UPGRADE:")) { upg = line.replace("SKILLS_UPGRADE:","").trim(); }
+    else if (line.startsWith("ACTION_PLAN:")) { plan = line.replace("ACTION_PLAN:","").trim(); }
+    else if (line.startsWith("DETAILED_ANALYSIS:")) { detailStart = true; }
+    else if (detailStart) { detail.push(line); }
+  });
+  document.getElementById("sg-score-num").textContent = score + "%";
+  document.getElementById("sg-bar").style.width = score + "%";
+  var color = score >= 70 ? "#6BCB77" : score >= 40 ? "#FFD93D" : "#FF6B6B";
+  document.getElementById("sg-score-box").style.background = "linear-gradient(135deg,#1a0533," + color + ")";
+  document.getElementById("sg-have").textContent = have || "Analysing...";
+  document.getElementById("sg-miss").textContent = miss || "None identified";
+  document.getElementById("sg-upg").textContent = upg || "None identified";
+  document.getElementById("sg-plan").textContent = plan || "See detailed analysis below";
+  document.getElementById("sg-out").textContent = detail.join("\n").trim() || text;
+}
+
+function reanalyse() {
+  document.getElementById("sg-res").style.display = "none";
+  document.getElementById("sg-input").scrollIntoView({ behavior:"smooth" });
+}
+
+// PRINT
+function printEl(id, title) {
+  var c = document.getElementById(id).textContent;
+  var w = window.open("","_blank");
+  w.document.write("<!DOCTYPE html><html><head><title>" + title + "</title><style>body{font-family:Arial,sans-serif;padding:40px;line-height:1.8;white-space:pre-wrap;font-size:14px;}</style></head><body><h2 style='color:#FF6B35;'>युवा रोज़गार सेतु 🚀</h2><h3>" + title + "</h3><hr><br>" + c + "</body></html>");
+  w.document.close();
+  w.print();
+}
+
+// WHATSAPP SHARE
+function wa(m) {
+  var u = window.location.href;
+  var msgs = {
+    cv: lang==="hi" ? "🎉 Maine Professional CV banaya sirf 2 min mein! Hindi mein bataya English CV mila! Free try karo: " + u : "🎉 I built my professional CV in 2 minutes! Free try: " + u,
+    rocket: lang==="hi" ? "🚀 Maine apna Career Roadmap paya! 90 din mein job-ready plan! Free pao: " + u : "🚀 Got my career roadmap! 90-day plan to job! Free: " + u,
+    skill: lang==="hi" ? "🎯 Maine apna Skill Gap analyse kiya! Pata chala kya seekhna hai job ke liye! Free try karo: " + u : "🎯 I analysed my skill gap for my dream job! Free try: " + u
+  };
+  window.open("https://wa.me/?text=" + encodeURIComponent(msgs[m] || msgs.cv), "_blank");
+}
+</script>
+</body>
+</html>
