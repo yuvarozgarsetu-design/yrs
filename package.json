@@ -1,6 +1,5 @@
 {
   "name": "yuva-rozgar-setu",
   "version": "1.0.0",
-  "description": "India's Hindi Employment Platform",
   "engines": { "node": "24.x" }
 }
