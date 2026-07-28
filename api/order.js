@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const { uid, email } = req.body;
     if (!uid) return res.status(400).json({ error: "User ID required" });
     const auth = Buffer.from(
-      process.env.RAZORPAY_KEY_ID + ":" + process.env.RAZORPAY_KEY_SECRET
+      process.env.RAZORPAYKEYID + ":" + process.env.RAZORPAYKEYSECRET
     ).toString("base64");
     const orderRes = await fetch("https://api.razorpay.com/v1/orders", {
       method: "POST",
