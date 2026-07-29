@@ -21,7 +21,10 @@ export default async function handler(req, res) {
       })
     });
     const order = await orderRes.json();
-    if (order.error) return res.status(400).json({ error: order.error.description });
+    console.log("RAZORPAY_KEY_ID present:", !!process.env.RAZORPAY_KEY_ID);
+    console.log("RAZORPAY_KEY_SECRET present:", !!process.env.RAZORPAY_KEY_SECRET);
+    console.log("Razorpay raw response:", JSON.stringify(order));
+    if (order.error) return res.status(400).json({ error: order.error.description, raw: order.error });
     return res.status(200).json({ orderId: order.id, amount: order.amount });
   } catch (e) {
     return res.status(500).json({ error: e.message });
