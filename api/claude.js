@@ -9,11 +9,11 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": process.env.CLAUDEAPIKEY,
+        "x-api-key": process.env.CLAUDE_API_KEY,
         "anthropic-version": "2023-06-01"
       },
       body: JSON.stringify({
-        model: "claude-sonnet-5",
+        model: "claude-sonnet-4-5",
         max_tokens: req.body.max_tokens || 1200,
         messages: req.body.messages
       })
